@@ -13,8 +13,24 @@ $("#setsheet").click(function() {
   //init();
 });
 */
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+    // Store
+    if(localStorage.url) {
+      var public_spreadsheet_url = localStorage.getItem("url");
+    }
+    else {
+      var public_spreadsheet_url = window.prompt("Public Google Sheet URL: ");
+      localStorage.setItem("url", public_spreadsheet_url);
+    }
+    // Retrieve
+    //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+  console.log("oops, no browser storage!")
+  var public_spreadsheet_url = window.prompt("Public Google Sheet URL: ");
+    //document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
 
-var public_spreadsheet_url = window.prompt("Public Google Sheet URL: ");
 
 function init() {
 Tabletop.init( { key: public_spreadsheet_url,

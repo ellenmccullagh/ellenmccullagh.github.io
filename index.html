@@ -27,8 +27,17 @@
     </div>
 
       <hr>
-      <p class="footertext">Have a name to add? <a href="https://docs.google.com/a/girlswhocode.com/spreadsheets/d/1p1DUEkzQ6qIQvZRuTcxoSz_AKO6gUJfLWe4cDAxJ0IM/edit?usp=sharing" target="_blank">Add it here.</a></p>
-      <p class="footertext">Thanks to Jeff Stern for making the <a href="http://jeffstern.co/sites/gwcglossary/">GWCAD</a> from which I stole all this code</p>
+
+      <p class="footertext">
+        <script>
+        function clearStorage() {
+          localStorage.clear();
+          location.reload();
+        }
+        </script>
+        <button id="clear_storage" class="btn btn-success" onclick="clearStorage()">Load New List</button>
+        <br>
+        Thanks to Jeff Stern from whom I stole all this code</p>
     </div> <!-- /container -->
 
 
